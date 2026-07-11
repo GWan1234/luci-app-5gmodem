@@ -1,0 +1,12 @@
+Модем ➜ ATI;ATI
+CUSTOMER ➜ AT^CUSTOMER?;AT^CUSTOMER?
+Качество сигнала ➜ AT+CSQ;AT+CSQ
+Аггрегации ➜ AT^CA_INFO?;AT^CA_INFO?
+Температура ➜ AT^TEMP?;AT^TEMP?
+Режим сети ➜ AT^SLMODE?;AT^SLMODE?
+Скорость USB ➜ AT^USBTYPE?;AT^USBTYPE?
+Отладка ➜ AT^DEBUG?;AT^DEBUG?
+Перезагрузка ➜ AT+CFUN=1,1;AT+CFUN=1,1
+Аггрегации Compal ➜ AT+LCAINFO
+Качество сигнала Compal ➜ AT+CESQ
+Инфа о БС + Сигнал Compal ➜ AT+BINFO;+CESQ

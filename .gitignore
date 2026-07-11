@@ -1,0 +1,4 @@
+*.lmo
+*.o
+.pkgdir/
+ipkg-*/

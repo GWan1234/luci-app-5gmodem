@@ -1,0 +1,1962 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "Modem settings"
+msgstr "Управление модемом"
+
+msgid "Details"
+msgstr "Подробности"
+
+msgid "USB debug information"
+msgstr "Отладка порта USB"
+
+msgid "Configuration"
+msgstr "Конфигурация"
+
+msgid "General Information"
+msgstr "Общая информация"
+
+msgid "Modem Information"
+msgstr "Информация о модеме"
+
+msgid "Cell / Signal Information"
+msgstr "Информация о соте / сигнале"
+
+msgid "Technology"
+msgstr "Технология"
+
+msgid "Operator"
+msgstr "Оператор"
+
+msgid "Signal strength"
+msgstr "Качество сигнала"
+
+msgid "Connection statistics"
+msgstr "Статистика соединения"
+
+msgid "Modem type"
+msgstr "Имя модема"
+
+msgid "Additional information"
+msgstr "Дополнительная информация"
+
+msgid "Revision / Firmware"
+msgstr "Версия прошивки"
+
+msgid "IP adress / Communication Port"
+msgstr "IP адрес или порт связи с модемом"
+
+msgid "Chip Temperature"
+msgstr "Температура чипа"
+
+msgid "Configuration 5gmodem"
+msgstr "Настройки"
+
+msgid "Configuration panel for the 5gmodem application"
+msgstr "Выберите интерфейс и порт модема"
+
+msgid "Network"
+msgstr "Сеть"
+
+msgid "IP adress / Port for communication with the modem"
+msgstr "IP-адрес / Порт связи с модемом"
+
+msgid "Protocol"
+msgstr "Протокол"
+
+msgid ""
+"Select the appropriate settings. <br /> <br />Traditional modem. <br /> "
+"Select one of the available ttyUSBX ports.<br /> <br />HiLink modem. <br /> "
+"Enter the IP address 192.168.X.X under which the modem is available."
+msgstr ""
+"Выберите соответствующие настройки. <br /> <br />Обычный модем. <br /> "
+"Выберите один из доступных портов ttyUSBX.<br /> <br />Модем типа HiLink. "
+"<br /> Введите IP-адрес 192.168.X.X под которым доступен модем."
+
+msgid "Very good"
+msgstr "Очень хороший"
+
+msgid "Good"
+msgstr "Хороший"
+
+msgid "Weak"
+msgstr "Слабый"
+
+msgid "Very weak"
+msgstr "Очень слабый"
+
+msgid "Excellent"
+msgstr "Отлично"
+
+msgid "Mid cell"
+msgstr "Удовлетворительно"
+
+msgid "Cell edge"
+msgstr "На грани"
+
+msgid "SIM status"
+msgstr "Статус SIM-карты"
+
+msgid "Not registered"
+msgstr "Не зарегистрирован в сети"
+
+msgid "Registered"
+msgstr "Зарегистрирован в сети"
+
+msgid "Registered (roaming)"
+msgstr "Зарегистрирован в другой сети (роуминг)"
+
+msgid "Registered, only SMS"
+msgstr "Зарегистрирован в сети, только SMS"
+
+msgid "Registered (roaming), only SMS"
+msgstr "Зарегистрирован в другой сети (роуминг), только SMS"
+
+msgid "Searching.."
+msgstr "Поиск.."
+
+msgid "Registering denied"
+msgstr "Отказано в регистрации в сети"
+
+msgid "Waiting to read data from the modem..."
+msgstr "Ожидание считывания данных с модема..."
+
+msgid "Waiting for connection data..."
+msgstr "Ожидание данных для соединения..."
+
+msgid "BTS Search"
+msgstr "Поиск базовой станции"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search BTS using Cell ID"
+msgstr "Поиск базовой станции по Cell ID"
+
+msgid ""
+"Hint: To set up a BTS search engine, all you have to do is select the "
+"dedicated website for your location."
+msgstr ""
+"Совет: Чтобы настроить поиск базовой станции, просто выберите сайт, "
+"соответствующий вашему местоположению."
+
+msgid "BTS search settings"
+msgstr "Настройки поиска базовой станции"
+
+msgid "Website to search for BTS"
+msgstr "Сайт для поиска базовой станции"
+
+msgid "Select a website for searching"
+msgstr "Выберите сайт для поиска"
+
+msgid "SIM Slot"
+msgstr "Слот SIM"
+
+msgid "Problem with registering to the network, check the SIM card"
+msgstr "Проблема с регистрацией в сети оператора, проверьте SIM-карту"
+
+msgid "SIM PIN required"
+msgstr "Требуется код PUK2 для SIM-карты"
+
+msgid "SIM PUK required"
+msgstr "Требуется код PUK для SIM-карты"
+
+msgid "SIM failure"
+msgstr "Сбой SIM-карты"
+
+msgid "SIM busy"
+msgstr "SIM-карта занята"
+
+msgid "SIM wrong"
+msgstr "Некорректная SIM-карта"
+
+msgid "SIM PIN2 required"
+msgstr "Требуется код PIN2 для SIM-карты"
+
+msgid "SIM PUK2 required"
+msgstr "Требуется код PUK2 для SIM-карты"
+
+msgid ""
+"There is a problem reading data from the modem. <br /><br /><b>Please check:"
+"</b> <ul><li>1. Modem availability in the system.</li><li>2. The correct "
+"installation of the SIM card in the modem.</li><li> 3. Port for "
+"communication with the modem.</li><li><ul>"
+msgstr ""
+"Возникла проблема со считыванием данных с модема. <br /><br /><b>Пожалуйста "
+"проверьте:</b> <ul><li>1. Наличие модема в системе.</li><li>2. Правильность "
+"установки SIM-карты в модем.</li><li> 3. Правильно указан порт для связи с "
+"модемом.</li><li><ul>"
+
+msgid ""
+"There is a problem reading connection data. <br /><br /><b>Please check:</b> "
+"<ul><li>1. Connection of the modem to the internet, the correctness of the "
+"entered APN. Some modems need to force the APN on the modem using at "
+"commands to connect to internet.</li><li> 2. Check that the correct "
+"interface assigned to the modem is selected. The default name of the "
+"interface in the package is wan.</li><li><ul>"
+msgstr ""
+"При чтении данных о соединении возникла проблема. <br /><br /><b>Пожалуйста "
+"проверьте:</b> <ul><li>1. Подключение модема к Интернету, правильность "
+"введенного APN. Некоторые модемы требуют ввести APN на модеме с помощью AT "
+"команд, чтобы подключиться к Интернету.</li><li> 2. Убедитесь, что выбран "
+"правильный интерфейс, назначенный модему. По умолчанию в комплекте поставки "
+"используется имя интерфейса wan.</li><li><ul>"
+
+msgid "Defined modems"
+msgstr "Добавленные модемы"
+
+msgid "Interface for selecting user defined modems"
+msgstr "Интерфейс выбора добавленных пользователем модемов"
+
+msgid "Modem selection menu"
+msgstr "Меню выбора модема"
+
+msgid "SIM card menu"
+msgstr "Меню SIM-карты"
+
+msgid "Information read from the SIM card and device"
+msgstr "Чтение информации с SIM-карты и устройства"
+
+msgid "Hint"
+msgstr "Подсказка"
+
+msgid "CLICK ME TO SEE NEW MENU"
+msgstr "НАЖМИ МЕНЯ ЧТОБЫ УВИДЕТЬ НОВОЕ МЕНЮ"
+
+msgid ""
+"Execution of various commands to check the availability of the modem and "
+"eliminate errors in the data collected by the scripts."
+msgstr ""
+"Выполнение разных команд для проверки доступности модема и выявления ошибок "
+"через скрипты."
+
+msgid "Check availability of ttyX ports"
+msgstr "Проверка доступности ttyX портов"
+
+msgid "Check data read by the 5gmodem scripts"
+msgstr "Проверка данных скриптами 5gmodem"
+
+msgid "Show devices"
+msgstr "Показать устройства"
+
+msgid "(Received Signal Strength Indicator)"
+msgstr "(индикатор уровня принимаемого сигнала)"
+
+msgid "(Reference Signal Receive Power)"
+msgstr "(мощность принимаемого опорного сигнала)"
+
+msgid "(Reference Signal Received Quality)"
+msgstr "(качество принимаемого опорного сигнала)"
+
+msgid "(Signal Strength)"
+msgstr "(уровень сигнала)"
+
+msgid "(Signal to Interference plus Noise Ratio)"
+msgstr "(отношение сигнала к помехам и шуму)"
+
+msgid "5gmodem"
+msgstr "5gmodem"
+
+msgid "CA band (SCC1)"
+msgstr "Диапазон CA (SCC1)"
+
+msgid "CA band (SCC2)"
+msgstr "Диапазон CA (SCC2)"
+
+msgid "CA band (SCC3)"
+msgstr "Диапазон CA (SCC3)"
+
+msgid "CA band (SCC4)"
+msgstr "Диапазон CA (SCC4)"
+
+msgid "CSQ"
+msgstr "CSQ"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Cell ID"
+msgstr "ID соты"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Debug"
+msgstr "Отладка"
+
+msgid "Diagnostics"
+msgstr "Диагностика"
+
+msgid "Download"
+msgstr "Скачать"
+
+msgid "Download error"
+msgstr "Ошибка загрузки"
+
+msgid "Error: "
+msgstr "Ошибка: "
+
+msgid "Interface"
+msgstr "Интерфейс"
+
+msgid "LAC"
+msgstr "LAC"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "MCC MNC"
+msgstr "MCC MNC"
+
+msgid "Modem"
+msgstr "Модем"
+
+msgid "Modem IMEI"
+msgstr "IMEI модема"
+
+msgid "Network interface for Internet access."
+msgstr "Сетевой интерфейс для доступа в интернет."
+
+msgid "Please select a port"
+msgstr "Выберите порт"
+
+msgid "Primary band (PCC) | PCI & EARFCN"
+msgstr "Основной диапазон (PCC) | PCI и EARFCN"
+
+msgid "RSRP"
+msgstr "RSRP"
+
+msgid "RSRQ"
+msgstr "RSRQ"
+
+msgid "RSSI"
+msgstr "RSSI"
+
+msgid "SIM ICCID"
+msgstr "ICCID SIM-карты"
+
+msgid "SIM IMSI"
+msgstr "IMSI SIM-карты"
+
+msgid "SINR"
+msgstr "SINR"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "TAC"
+msgstr "TAC"
+
+msgid "☰"
+msgstr "☰"
+
+msgid "Network mode"
+msgstr "Режим сети"
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "Applying network mode..."
+msgstr "Применение режима сети..."
+
+msgid "Network mode set: %s"
+msgstr "Режим сети установлен: %s"
+
+msgid "Failed to set network mode"
+msgstr "Не удалось установить режим сети"
+
+msgid "LTE bands"
+msgstr "Диапазоны LTE"
+
+msgid "5G bands"
+msgstr "Диапазоны 5G"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "All bands"
+msgstr "Все диапазоны"
+
+msgid "Enable all supported bands"
+msgstr "Включить все поддерживаемые диапазоны"
+
+msgid "Applying bands..."
+msgstr "Применение диапазонов..."
+
+msgid "Bands set. The modem will reconnect."
+msgstr "Диапазоны применены. Модем переподключится."
+
+msgid "Failed to set bands"
+msgstr "Не удалось применить диапазоны"
+
+msgid "Select at least one band"
+msgstr "Выберите хотя бы один диапазон"
+
+msgid "Messages"
+msgstr "Сообщения"
+
+msgid "Receive"
+msgstr "Приём"
+
+msgid "USSD"
+msgstr "USSD"
+
+msgid "Sender"
+msgstr "Отправитель"
+
+msgid "Received"
+msgstr "Получено"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "AT"
+msgstr "AT"
+
+msgid "Please enter phone number"
+msgstr "Пожалуйста, введите номер телефона"
+
+msgid "Please enter a message text"
+msgstr "Пожалуйста, введите текст сообщения"
+
+msgid "Reply"
+msgstr "Ответ"
+
+msgid "Please enter a USSD code"
+msgstr "Пожалуйста, введите код для отправки"
+
+msgid "Send to"
+msgstr "Отправить на"
+
+msgid "Message text"
+msgstr "Текст сообщения"
+
+msgid "Send"
+msgstr "Отправка"
+
+msgid "Send to number"
+msgstr "Отправить на номер"
+
+msgid "to number"
+msgstr "на номер"
+
+msgid "to group"
+msgstr "в группу"
+
+msgid "SMS sent sucessfully"
+msgstr "SMS отправлено"
+
+msgid "Code to send"
+msgstr "Код для отправки"
+
+msgid "Send code"
+msgstr "Отправить код"
+
+msgid "SMS Settings"
+msgstr "Настройка SMS"
+
+msgid "USSD Settings"
+msgstr "Настройка USSD"
+
+msgid "SMS reading port"
+msgstr "Порт для чтения SMS"
+
+msgid "SMS sending port"
+msgstr "Порт для отправки SMS"
+
+msgid "AT commands sending port"
+msgstr "Порт для отправки AT-команд"
+
+msgid "AT Settings"
+msgstr "Настройка AT"
+
+msgid "Merge split messages"
+msgstr "Объединить разделенные сообщения"
+
+msgid ""
+"Checking this option will make it easier to read the messages, but it will "
+"cause a discrepancy in the number of messages shown and received."
+msgstr ""
+"Разделенные сообщения будут объединены. Включение этой опции облегчит чтение "
+"SMS, но приведет к несоответствию в количестве отображаемых и полученных "
+"сообщений."
+
+msgid "USSD sending port"
+msgstr "Порт для отправки USSD-кодов"
+
+msgid "Send USSD as plain text"
+msgstr "Отправлять USSD открытым текстом"
+
+msgid "Get message without PDU decoding"
+msgstr "Получать сообщения без PDU декодирования"
+
+msgid ""
+"Send the USSD code in plain text. Command is not being coded to the PDU."
+msgstr "Отправляет USSD как есть (plain text), не декодируя в PDU."
+
+msgid "Display the message without decoding it as a PDU."
+msgstr "Полученные сообщения отображаются без декодирования PDU."
+
+msgid "Explanation of number and prefix"
+msgstr "Пояснение относительно номера и префикса"
+
+msgid ""
+"In the tab for sending SMS, show an explanation of the prefix and the "
+"correct phone number."
+msgstr ""
+"Во вкладке для отправки SMS показать пояснение относительно префикса и "
+"правильного номера телефона."
+
+msgid ""
+"The phone number should be preceded by the country prefix (e.g for Russia it is "
+"7, without '+'). If the number is 3-5 characters long, it is treated as "
+"'short' and should not be preceded by a country prefix."
+msgstr ""
+"Укажите префикс страны (для России это 7, без "
+"знака '+'). Если номер состоит из 3-5 символов, он считается "
+"'коротким' и не должен иметь префикса страны."
+
+msgid "Add prefix to phone number"
+msgstr "Добавить префикс к номеру телефона"
+
+msgid "Automatically add prefix to the phone number field."
+msgstr "Автоматически добавить префикс в поле номера телефона."
+
+msgid "Prefix number"
+msgstr "Номер префикса"
+
+msgid "Please specify the command to send"
+msgstr "Пожалуйста, укажите команду для отправки"
+
+msgid "Please specify the code to send"
+msgstr "Пожалуйста, укажите код для отправки"
+
+msgid "Please set the port for communication with the modem"
+msgstr "Пожалуйста, укажите порт для связи с модемом"
+
+msgid "AT templates"
+msgstr "Шаблоны AT"
+
+msgid "Command to send"
+msgstr "Команда для отправки"
+
+msgid "Clear form"
+msgstr "Очистить форму"
+
+msgid "Send command"
+msgstr "Отправить команду"
+
+msgid "Message storage area"
+msgstr "Место хранения сообщений"
+
+msgid ""
+"Messages are stored in a specific location (for example, on the SIM card or "
+"modem memory), but other areas may also be available depending on the type "
+"of device."
+msgstr ""
+"Сообщения хранятся в определенном месте (например, на SIM-карте или в памяти "
+"модема), но в зависимости от типа устройства могут быть доступны и другие "
+"области."
+
+msgid "SIM card"
+msgstr "SIM-карта"
+
+msgid "Modem memory"
+msgstr "Память модема"
+
+msgid "Storage used / Total capacity"
+msgstr "Используемая память / Общая емкость"
+
+msgid "Delete selected"
+msgstr "Удалить выбранное"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete all"
+msgstr "Удалить все"
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Please select the message(s) to be deleted"
+msgstr "Пожалуйста, выберите сообщение(-я) для удаления"
+
+msgid "Delete selected message(s)?"
+msgstr "Удалить выбранное(-ые) сообщение(-я)?"
+
+msgid "Delete all the messages?"
+msgstr "Удалить все сообщения?"
+
+msgid "Configuration sms-tool"
+msgstr "Конфигурация sms-tool"
+
+msgid "Configuration panel for sms-tool and gui application."
+msgstr "Панель настроек для программы sms-tool и для пользовательского интерфейса."
+
+msgid "Port for communication with the modem"
+msgstr "Порт для связи с модемом"
+
+msgid "Select one of the available ttyUSBX ports."
+msgstr "Выберите один из доступных портов ttyUSBX."
+
+msgid "User contacts"
+msgstr "Контакты пользователя"
+
+msgid "Enable group messaging"
+msgstr "Включить групповые сообщения"
+
+msgid ""
+"This option allows you to send one message to all contacts in the user's "
+"contact list."
+msgstr ""
+"Опция позволяет отправить одно сообщение всем контактам из списка контактов "
+"пользователя."
+
+msgid "Message sending delay"
+msgstr "Задержка при отправке сообщений"
+
+msgid "[Bot] Message sent to number:"
+msgstr "[Bot] Сообщение отправлено на номер:"
+
+msgid "User USSD codes"
+msgstr "USSD-коды пользователя"
+
+msgid ""
+"Each line must have the following format: 'Contact name;phone number'. For "
+"user convenience, the file is saved to the location <code>/etc/modem/"
+"phonebook.user</code>."
+msgstr ""
+"Каждая строка должна иметь следующий формат: 'Имя контакта;номер телефона'. "
+"Для удобства пользователя контакты сохраняются в файле <code>/etc/modem/"
+"phonebook.user</code>."
+
+msgid ""
+"Each line must have the following format: 'At command description;AT "
+"command'. For user convenience, the file is saved to the location <code>/etc/"
+"modem/atcmmds.user</code>."
+msgstr ""
+"Каждая строка должна иметь следующий формат: 'Описание AT-команды;AT-"
+"команда'. Для удобства пользователя команды сохраняются в файле <code>/etc/"
+"modem/atcmmds.user</code>."
+
+msgid ""
+"Each line must have the following format: 'Code description;code'. For user "
+"convenience, the file is saved to the location <code>/etc/modem/"
+"ussdcodes.user</code>."
+msgstr ""
+"Каждая строка должна иметь следующий формат: 'Описание кода;код'. Для "
+"удобства пользователя коды сохраняются в файле <code>/etc/modem/"
+"ussdcodes.user</code>."
+
+msgid "Display new messages notification on login page"
+msgstr "Отображать уведомление о новых сообщениях на странице входа"
+
+msgid ""
+"Display notification when new messages arrive in the selected message area."
+msgstr ""
+"Отображать уведомление при поступлении новых сообщений в выбранной области "
+"сообщений."
+
+msgid "new message"
+msgstr "новое сообщение"
+
+msgid "new messages"
+msgstr "новых сообщений"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "Read"
+msgstr "Прочитано"
+
+msgid "Unread"
+msgstr "Непрочитано"
+
+msgid "All / Read / Unread"
+msgstr "Все / Прочитанные / Непрочитанные"
+
+msgid "Show all, read or unread messages"
+msgstr "Показать все, прочитанные или непрочитанные сообщения"
+
+msgid "Show system messages in the message list"
+msgstr "Показывать системные сообщения в списке сообщений"
+
+msgid "Mark as read"
+msgstr "Отметить как прочитанное"
+
+msgid "Mark as unread"
+msgstr "Отметить как непрочитанное"
+
+msgid "Please select the message(s) to be marked as read"
+msgstr "Пожалуйста, выберите сообщение(-я) для отметки как прочитанные"
+
+msgid "Please select the message(s) to be marked as unread"
+msgstr "Пожалуйста, выберите сообщение(-я) для отметки как непрочитанные"
+
+msgid "Mark selected message(s) as read?"
+msgstr "Отметить выбранное(-ые) сообщение(-я) как прочитанные?"
+
+msgid "Mark selected message(s) as unread?"
+msgstr "Отметить выбранное(-ые) сообщение(-я) как непрочитанные?"
+
+msgid "Message marked as read"
+msgstr "Сообщение отмечено как прочитанное"
+
+msgid "Messages marked as read"
+msgstr "Сообщения отмечены как прочитанные"
+
+msgid "Message marked as unread"
+msgstr "Сообщение отмечено как непрочитанное"
+
+msgid "Messages marked as unread"
+msgstr "Сообщения отмечены как непрочитанные"
+
+msgid "System messages"
+msgstr "Системные сообщения"
+
+msgid "Diode"
+msgstr "Диод"
+
+msgid "New messages notification LED"
+msgstr "Светодиодное уведомление о новых сообщениях"
+
+msgid "Enable SMS notification LED on new message"
+msgstr "Включить светодиодное уведомление SMS при новом сообщении"
+
+msgid ""
+"Enable notification LED when new messages arrive in the selected message "
+"area."
+msgstr ""
+"Включить светодиодное уведомление при поступлении новых сообщений в "
+"выбранной области сообщений."
+
+msgid "Selected LED"
+msgstr "Выбранный светодиод"
+
+msgid ""
+"Select an LED diode for new message notification. The selection is made from "
+"the available LEDs in the system."
+msgstr ""
+"Выберите светодиодный диод для уведомления о новых сообщениях. Выбор "
+"производится из доступных светодиодов в системе."
+
+msgid "Automatically select LED"
+msgstr "Автоматически выбрать светодиод"
+
+msgid "Automatically select the first available LED."
+msgstr "Автоматически выбрать первый доступный светодиод."
+
+msgid "Advanced settings"
+msgstr "Расширенные настройки"
+
+msgid "LED Flashing interval (in seconds)"
+msgstr "Интервал мигания светодиода (в секундах)"
+
+msgid "Set the LED flashing interval (in seconds)."
+msgstr "Установить интервал мигания светодиода (в секундах)."
+
+msgid "Flashing duration (in seconds)"
+msgstr "Продолжительность мигания (в секундах)"
+
+msgid ""
+"Set the flashing duration (in seconds). Set to 0 for infinite duration (LED "
+"will flash until messages are marked as read)."
+msgstr ""
+"Установить продолжительность мигания (в секундах). Установить 0 для "
+"бесконечной продолжительности (светодиод будет мигать, пока сообщения не "
+"будут отмечены как прочитанные)."
+
+msgid "Please wait... Saving SMS messages to a text file."
+msgstr ""
+"Пожалуйста, подождите... Идет процесс сохранения SMS-сообщений в текстовый "
+"файл."
+
+msgid ""
+"This option allows to backup SMS messages or, for example, save messages "
+"that are not supported by the sms-tool."
+msgstr ""
+"Опция позволяет выполнить резервное копирование SMS или, например, сохранить "
+"сообщения, не поддерживаемые sms-tool."
+
+msgid "Delete all messages"
+msgstr "Удалить все сообщения"
+
+msgid ""
+"This option allows you to delete all SMS messages when they are not visible "
+"in the 'Received Messages' tab."
+msgstr ""
+"Опция позволяет удалить все SMS-сообщения в случае, если они не видны во "
+"вкладке 'Полученные сообщения'."
+
+msgid "Saving SMS messages to a file failed. Please try again."
+msgstr ""
+"Сохранение SMS-сообщений в файл завершилось неудачей. Пожалуйста, попробуйте "
+"снова."
+
+msgid "PDU decoding scheme"
+msgstr "Схема декодирования PDU"
+
+msgid "Autodetect"
+msgstr "Автоопределение"
+
+msgid "Keep the previous reply when sending a new USSD"
+msgstr "Сохранить предыдущий ответ при отправке нового USSD"
+
+msgid "Check this option if you need to use the menu built on USSD codes"
+msgstr ""
+"Отметьте эту опцию, если вам нужно воспользоваться меню, построенным на USSD-"
+"кодах"
+
+msgid "Newest replies first"
+msgstr "Новые ответы сверху"
+
+msgid "View new reply from top"
+msgstr "Показать новый ответ сверху"
+
+msgid "Please wait... deleted"
+msgstr "Пожалуйста, подождите... удалено"
+
+msgid "of"
+msgstr "из"
+
+msgid "selected messages"
+msgstr "выбранных сообщений"
+
+msgid ""
+"The package requires user configuration. <br /><br /><b>The following need "
+"to be set:</b> <ul><li>1. All ports for communication with the modem.</"
+"li><li>2. Additional options specific to the given modem (for handling USSD "
+"codes).</li><li> 3. Notification LED (optional).</li><li><ul>"
+msgstr ""
+"Пакет требует конфигурации пользователем. <br /><br /><b>Необходимо "
+"настроить:</b> <ul><li>1. Все порты для связи с модемом.</li><li>2. "
+"Дополнительные опции, специфичные для данного модема (для обработки USSD-"
+"кодов).</li><li> 3. Светодиод уведомлений (опционально).</li><li><ul>"
+
+msgid ""
+"Any change in the area from which SMS messages will be read requires "
+"refreshing the messages"
+msgstr ""
+"Любое изменение места, из которого будут читаться SMS, требует обновления "
+"сообщений"
+
+msgid "Characters remaining:"
+msgstr "Осталось символов:"
+
+msgid "Encoding standard"
+msgstr "Стандарт кодирования"
+
+msgid "GSM-7 (160 characters)"
+msgstr "GSM-7 (160 символов)"
+
+msgid "Unicode (70 characters)"
+msgstr "Unicode (70 символов)"
+
+msgid "GSM-7 encoding (160 characters)"
+msgstr "Кодировка GSM-7 (160 символов)"
+
+msgid ""
+"Unicode encoding (70 characters), does not support sending national "
+"characters (in utf8) - only ascii"
+msgstr ""
+"Кодировка Unicode (70 символов), не поддерживает отправку национальных "
+"символов (в utf8) – только ASCII"
+
+msgid "The tab allows users to support the package."
+msgstr "Вкладка позволяет пользователям поддержать пакет"
+
+msgid "Luci-app-sms-tool-js Info"
+msgstr "Информация о пакете luci-app-sms-tool-js"
+
+msgid "Report a bug"
+msgstr "Сообщить об ошибке"
+
+msgid "Write in the topic of the package on the forum eko.one.pl"
+msgstr "Написать в теме пакета на форуме eko.one.pl"
+
+msgid "Write on forum"
+msgstr "Написать на форуме"
+
+msgid "Report a bug on the package Github page"
+msgstr "Сообщить об ошибке на странице Github пакета"
+
+msgid "Open a package discussion on Github"
+msgstr "Открыть обсуждение пакета на Github"
+
+msgid "Open discussion"
+msgstr "Открыть обсуждение"
+
+msgid ""
+"Buy a coffee if you want to support the development of the project and the "
+"author"
+msgstr "Купите кофе, если хотите поддержать развитие проекта и автора"
+
+msgid "Buy a coffee"
+msgstr "Купить кофе"
+
+msgid ""
+"Become a sponsor if you want to support the development of the project and "
+"the author"
+msgstr "Станьте спонсором, если хотите поддержать развитие проекта и автора"
+
+msgid "Become a sponsor"
+msgstr "Стать спонсором"
+
+msgid "Package Info"
+msgstr "Информация о пакете"
+
+msgid "Author (package maintainer)"
+msgstr "Автор (сопровождающий пакета)"
+
+msgid "Package update and support"
+msgstr "Обновление пакета и поддержка"
+
+msgid "Email Forwarding"
+msgstr "Пересылка на почту"
+
+msgid "An e-mail will be sent.."
+msgstr "E-mail будет отправлен.."
+
+msgid "Enable message forwarding"
+msgstr "Включить пересылку сообщений"
+
+msgid "E-mail settings"
+msgstr "Настройки для e-mail"
+
+msgid "Select a predefined e-mail settings or enter settings manually."
+msgstr ""
+"Выберите предопределенные настройки e-mail или введите настройки вручную."
+
+msgid "Recipient"
+msgstr "Получатель"
+
+msgid "E-mail address of the recipient."
+msgstr "Адрес e-mail получателя."
+
+msgid "E-mail address of the sender."
+msgstr "Адрес e-mail отправителя."
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Username for SMTP authentication."
+msgstr "Имя пользователя для аутентификации SMTP."
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Google app password / Password for SMTP authentication."
+msgstr "Пароль приложения Google / Пароль для аутентификации SMTP."
+
+msgid "SMTP server"
+msgstr "SMTP-сервер"
+
+msgid "Hostname/IP address of the SMTP server."
+msgstr "Имя хоста/IP-адрес SMTP-сервера."
+
+msgid "SMTP server port"
+msgstr "Порт SMTP-сервера"
+
+msgid "Security"
+msgstr "Безопасность"
+
+msgid "TLS: use STARTTLS if the server supports it."
+msgstr "TLS: использовать STARTTLS, если сервер это поддерживает."
+
+msgid "SSL: SMTP over SSL."
+msgstr "SSL: SMTP через SSL."
+
+msgid "Required Package"
+msgstr "Требуемый пакет"
+
+msgid ""
+"The SMS forwarding option requires the mailsend package to be installed."
+msgstr "Опция пересылки SMS-сообщений требует установленного пакета mailsend."
+
+msgid "Check required packages"
+msgstr "Проверить требуемые пакеты"
+
+msgid "Check"
+msgstr "Проверить"
+
+msgid "Mailsend Package"
+msgstr "Пакет mailsend"
+
+msgid "Loading package data…"
+msgstr "Загрузка данных пакета…"
+
+msgid "Installed"
+msgstr "Установлен"
+
+msgid "Install…"
+msgstr "Установить…"
+
+msgid "Please select exactly one message to forward"
+msgstr "Пожалуйста, выберите ровно одно сообщение для пересылки"
+
+msgid "Forward selected message to e-mail?"
+msgstr "Переслать выбранное сообщение на e-mail?"
+
+msgid "Sending e-mail..."
+msgstr "Отправка e-mail..."
+
+msgid "Message forwarded successfully"
+msgstr "Сообщение успешно переслано"
+
+msgid "Failed to forward message: %s"
+msgstr "Не удалось переслать сообщение: %s"
+
+msgid "Error: %s"
+msgstr "Ошибка: %s"
+
+msgid "user define"
+msgstr "пользовательские настройки"
+
+msgid "Forward"
+msgstr "Переслать"
+
+msgid "Please select the message(s) to be forwarded"
+msgstr "Выберите сообщение(-я), которое(-ые) хотите переслать"
+
+msgid "SMS forwarding function is not enabled. Please configure it first"
+msgstr "Функция пересылки SMS-сообщений не включена. Сначала настройте ее"
+
+msgid "My Router"
+msgstr "Мой роутер"
+
+msgid "Forward SMS to E-mail"
+msgstr "Переслать SMS-сообщение(-я) на e-mail"
+
+msgid "Subject:"
+msgstr "Тема:"
+
+msgid "Message text:"
+msgstr "Текст сообщения:"
+
+msgid "Subject and body cannot be empty"
+msgstr "Тема и текст не могут быть пустыми"
+
+msgid ""
+"Package mailsend is not installed. Please install it first using the "
+"Install... button below"
+msgstr ""
+"Пакет mailsend не установлен. Пожалуйста, сначала установите его, используя "
+"кнопку Установить... ниже"
+
+msgid "Select modem"
+msgstr "Выбрать модем"
+
+msgid "Changing a modem requires refreshing the messages"
+msgstr "Смена модема требует обновления сообщений"
+
+msgid "Defined AT command files"
+msgstr "Определенные файлы AT-команд"
+
+msgid "Defined USSD code files"
+msgstr "Определённые файлы USSD-кодов"
+
+msgid "File uploaded and saved to"
+msgstr "Файл загружен и сохранен в"
+
+msgid "Unable to upload file"
+msgstr "Не удалось загрузить файл"
+
+msgid "Phonebook saved successfully"
+msgstr "Телефонная книга успешно сохранена"
+
+msgid "Unable to save the file"
+msgstr "Не удалось сохранить файл"
+
+msgid "filename.user"
+msgstr "имяфайла.user"
+
+msgid "Select or create a file to edit..."
+msgstr "Выберите или создайте файл для редактирования..."
+
+msgid "Please enter a file name"
+msgstr "Пожалуйста, введите имя файла"
+
+msgid "File created successfully"
+msgstr "Файл успешно создан"
+
+msgid "Unable to create file"
+msgstr "Не удалось создать файл"
+
+msgid "Please select a file to delete"
+msgstr "Пожалуйста, выберите файл для удаления"
+
+msgid "Are you sure you want to delete this file?"
+msgstr "Вы уверены, что хотите удалить этот файл?"
+
+msgid "File deleted successfully"
+msgstr "Файл успешно удален"
+
+msgid "Unable to delete file"
+msgstr "Не удалось удалить файл"
+
+msgid "Please select or create a file first"
+msgstr "Пожалуйста, сначала выберите или создайте файл"
+
+msgid "File saved successfully"
+msgstr "Файл успешно сохранен"
+
+msgid "Unable to save file"
+msgstr "Не удалось сохранить файл"
+
+msgid "Load .user file"
+msgstr "Загрузить .user файл"
+
+msgid "Save .user file"
+msgstr "Сохранить .user файл"
+
+msgid "Manage contacts"
+msgstr "Управление контактами"
+
+msgid "Edit User Contacts"
+msgstr "Редактировать контакты пользователя"
+
+msgid ""
+"Each line must have the following format: 'Code description;code'. For user "
+"convenience, the file is saved to the location <code>/etc/modem/ussdcodes/</"
+"code>."
+msgstr ""
+"Каждая строка должна иметь следующий формат: 'Описание кода;код'. Для "
+"удобства пользователя файл сохраняется в <code>/etc/modem/ussdcodes/</code>."
+
+msgid ""
+"Each line must have the following format: 'AT command description;AT "
+"command'. For user convenience, the file is saved to the location <code>/etc/"
+"modem/atcmmds/</code>."
+msgstr ""
+"Каждая строка должна иметь следующий формат: 'Описание AT-команды;AT-"
+"команда'. Для удобства пользователя файл сохраняется в <code>/etc/modem/"
+"atcmmds/</code>."
+
+msgid "-- Select file --"
+msgstr "-- Выберите файл --"
+
+msgid "Select file"
+msgstr "Выбрать файл"
+
+msgid "New file name"
+msgstr "Новое имя файла"
+
+msgid "Delete selected file"
+msgstr "Удалить выбранный файл"
+
+msgid "Select file with AT commands to load"
+msgstr "Выберите файл с AT-командами для загрузки"
+
+msgid "Error loading AT commands file: "
+msgstr "Ошибка загрузки файла AT-команд: "
+
+msgid "No AT commands available"
+msgstr "AT-команды недоступны"
+
+msgid "Error loading initial AT commands file:"
+msgstr "Ошибка загрузки исходного файла AT-команд:"
+
+msgid "Error loading USSD codes file: "
+msgstr "Ошибка загрузки файла USSD-кодов: "
+
+msgid "Error loading initial USSD file:"
+msgstr "Ошибка загрузки исходного файла USSD:"
+
+msgid "Select file with USSD codes to load"
+msgstr "Выберите файл с USSD-кодами для загрузки"
+
+msgid "No USSD codes available"
+msgstr "USSD-коды недоступны"
+
+msgid "Show notification icon"
+msgstr "Показывать значок уведомлений"
+
+msgid "Show the new message notification icon on the status overview page."
+msgstr ""
+"Показывать значок уведомления о новом сообщении на странице обзора состояния."
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "Modems"
+msgstr "Модемы"
+
+msgid "Signal Quality"
+msgstr "Качество сигнала"
+
+msgid "Align preview to:"
+msgstr "Выровнять предпросмотр по:"
+
+msgid "Left"
+msgstr "Слева"
+
+msgid "Center"
+msgstr "По центру"
+
+msgid "Right"
+msgstr "Справа"
+
+msgid "New message information block settings"
+msgstr "Настройки блока информации о новых сообщениях"
+
+msgid "Alignment settings saved successfully"
+msgstr "Настройки выравнивания успешно сохранены"
+
+msgid "SMS Info"
+msgstr "Информация SMS"
+
+msgid "New SMS"
+msgstr "Новое SMS"
+
+msgid "No new SMS"
+msgstr "Нет новых SMS"
+
+msgid "Deleting files"
+msgstr "Удаление файлов"
+
+msgid "Delete all files"
+msgstr "Удалить все файлы"
+
+msgid "Load .gz archive"
+msgstr "Загрузить архив .gz"
+
+msgid "Save .gz archive"
+msgstr "Сохранить архив .gz"
+
+msgid "Failed to extract archive"
+msgstr "Не удалось распаковать архив"
+
+msgid "Archive extracted to"
+msgstr "Архив распакован в"
+
+msgid "Upload error"
+msgstr "Ошибка загрузки"
+
+msgid "Failed to create archive"
+msgstr "Не удалось создать архив"
+
+msgid "Failed to read archive"
+msgstr "Не удалось прочитать архив"
+
+msgid "Are you sure you want to delete all files in the folder?"
+msgstr "Вы уверены, что хотите удалить все файлы в папке?"
+
+msgid "All files deleted successfully"
+msgstr "Все файлы успешно удалены"
+
+msgid "Call Log"
+msgstr "Журнал вызовов"
+
+msgid "Clear all call log entries?"
+msgstr "Очистить все записи в журнале вызовов?"
+
+msgid "No call log entries found"
+msgstr "Записей в журнале вызовов не найдено"
+
+msgid "No matching call log entries found"
+msgstr "Совпадающих записей в журнале не найдено"
+
+msgid ""
+"User interface for viewing call logs. The log is collected by a background "
+"daemon."
+msgstr ""
+"Пользовательский интерфейс для просмотра журналов вызовов. Журнал собирается "
+"фоновым процессом (демоном)."
+
+msgid ""
+"Call log daemon is disabled. Please enable it in the configuration to start "
+"collecting logs."
+msgstr ""
+"Демон журнала вызовов отключен. Пожалуйста, включите его в конфигурации, "
+"чтобы начать сбор логов."
+
+msgid "Filter call type"
+msgstr "Фильтр типа вызова"
+
+msgid "All calls"
+msgstr "Все вызовы"
+
+msgid "Missed calls"
+msgstr "Пропущенные"
+
+msgid "Received calls"
+msgstr "Входящие"
+
+msgid "Dialed calls"
+msgstr "Исходящие"
+
+msgid "Clear Log"
+msgstr "Очистить журнал"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Number"
+msgstr "Номер"
+
+msgid "Duration"
+msgstr "Длительность"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Call log reading port"
+msgstr "Порт чтения журнала вызовов"
+
+msgid "Enable call log daemon"
+msgstr "Включить демон журнала вызовов"
+
+msgid "Background process to log incoming and missed calls."
+msgstr "Фоновый процесс для регистрации входящих и пропущенных вызовов."
+
+msgid "Forward SMS"
+msgstr "Переслать SMS"
+
+msgid "Calls"
+msgstr "Вызовы"
+
+msgid "Notification Settings"
+msgstr "Настройка уведомлений"
+
+msgid ""
+"The LED informs about a new message. Before activating this function, please "
+"config and save the SMS reading port, time to check SMS inbox and select the "
+"notification LED."
+msgstr ""
+"Светодиод информирует о новом сообщении. Перед активацией этой функции "
+"настройте и сохраните порт чтения SMS, время проверки входящих сообщений и "
+"выберите светодиод уведомлений."
+
+msgid "Check inbox every minute(s)"
+msgstr "Проверять входящие каждую минуту(ы)"
+
+msgid "Specify how many minutes you want your inbox to be checked."
+msgstr "Укажите, через сколько минут проверять входящие сообщения."
+
+msgid "Notification LED"
+msgstr "Светодиод уведомлений"
+
+msgid "Select the notification LED."
+msgstr "Выберите светодиод уведомлений."
+
+msgid "Notify new messages"
+msgstr "Уведомлять о новых сообщениях"
+
+msgid "Restart the inbox checking process every"
+msgstr "Перезапускать процесс проверки каждые"
+
+msgid ""
+"The process will restart at the selected time interval. This will eliminate "
+"the delay in checking your inbox."
+msgstr ""
+"Процесс будет перезапускаться через выбранный интервал времени. Это устранит "
+"задержку при проверке входящих сообщений."
+
+msgid "4h"
+msgstr "4 ч."
+
+msgid "6h"
+msgstr "6 ч."
+
+msgid "8h"
+msgstr "8 ч."
+
+msgid "12h"
+msgstr "12 ч."
+
+msgid "The diode is dedicated only to these notifications"
+msgstr "Светодиод выделен только для этих уведомлений"
+
+msgid ""
+"Select 'No' in case the router has only one LED or if the LED is multi-"
+"tasking. <br /><br /><b>Important</b> <br />This option requires LED to be "
+"defined in the system (if possible) to work properly. This requirement "
+"applies when the diode supports multiple tasks."
+msgstr ""
+"Выберите «Нет», если у роутера только один светодиод или если светодиод "
+"многофункциональный. <br /><br /><b>Важно</b> <br />Для корректной работы "
+"этой опции светодиод должен быть определен в системе (если это возможно). "
+"Это требование применимо, когда диод поддерживает несколько задач."
+
+msgid "Call Log Settings"
+msgstr "Настройка Журнала звонков"
+
+msgid ""
+"Background process to log incoming and missed calls. <br /><br /"
+"><b>Important</b> <br />Option dedicated to Qualcomm modems that do not have "
+"internal call history memory and do not support the standard AT+CPBR "
+"command. Enabling this option adds a new tab. If dedicated tab does not "
+"appear, clear your browser cache and restart the router."
+msgstr ""
+"Фоновый процесс для записи входящих и пропущенных звонков. <br /><br /"
+"><b>Важно</b> <br />Опция предназначена для модемов Qualcomm, у которых нет "
+"внутренней памяти истории звонков и которые не поддерживают стандартную "
+"команду AT+CPBR. Включение этой опции добавляет новую вкладку. Если вкладка "
+"не появится, очистите кеш браузера и перезапустите роутер."
+
+msgid "/"
+msgstr "/"
+
+msgid "160"
+msgstr "160"
+
+msgid "7Bit"
+msgstr "7Bit"
+
+msgid "<abbr title=\"Light Emitting Diode\">LED</abbr> Name"
+msgstr "Имя <abbr title=\"светодиод\">LED</abbr>"
+
+msgid "Advanced (merges with sorting)"
+msgstr "Продвинутый (объединение с сортировкой)"
+
+msgid "Call barred."
+msgstr "Вызов запрещён."
+
+msgid "Corporate personalization PIN required."
+msgstr "Требуется PIN корпоративной персонализации."
+
+msgid "Corporate personalization PUK required."
+msgstr "Требуется PUK корпоративной персонализации."
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Dial string too long."
+msgstr "Слишком длинная строка набора."
+
+msgid "Direction of message merging"
+msgstr "Направление объединения сообщений"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Expect a decimal value"
+msgstr "Ожидается числовое значение"
+
+msgid "Expect a decimal value between five and fifty-nine"
+msgstr "Ожидается число от пяти до пятидесяти девяти"
+
+msgid "Expect a decimal value between three and fifty-nine"
+msgstr "Ожидается число от трёх до пятидесяти девяти"
+
+msgid "Failed to detect modem: "
+msgstr "Не удалось определить модем: "
+
+msgid ""
+"For modems managed by ModemManager over MBIM/QMI (e.g. Compal RXM-G1 / Tri "
+"Cascade VOS_5G): incoming messages are captured by ModemManager and never "
+"appear in AT storages, so sms_tool cannot see them. In this mode port and "
+"storage settings are not used. Requires the modemmanager package."
+msgstr ""
+"Для модемов под управлением ModemManager по MBIM/QMI (например, Compal RXM-"
+"G1 / Tri Cascade VOS_5G): входящие сообщения перехватывает ModemManager, и в "
+"AT-хранилищах они не появляются, поэтому sms_tool их не видит. В этом режиме "
+"настройки порта и хранилища не используются. Требуется пакет modemmanager."
+
+msgid "From beginning to end"
+msgstr "С начала в конец"
+
+msgid "From end to beginning"
+msgstr "С конца в начало"
+
+msgid "GPRS services not allowed."
+msgstr "Услуги GPRS не разрешены."
+
+msgid "Illegal ME."
+msgstr "Недопустимое оборудование (ME)."
+
+msgid "Illegal MS."
+msgstr "Недопустимая мобильная станция (MS)."
+
+msgid "Incorrect password."
+msgstr "Неверный пароль."
+
+msgid "Invalid block."
+msgstr "Недопустимый блок."
+
+msgid "Invalid characters in dial string."
+msgstr "Недопустимые символы в строке набора."
+
+msgid "Invalid characters in text string."
+msgstr "Недопустимые символы в тексте."
+
+msgid "Invalid dial string."
+msgstr "Недопустимая строка набора."
+
+msgid "Invalid index."
+msgstr "Недопустимый индекс."
+
+msgid "Invalid mobile class."
+msgstr "Недопустимый класс мобильного устройства."
+
+msgid "Location area not allowed."
+msgstr "Зона расположения не разрешена."
+
+msgid "Location update failure – emergency calls only (Specific Modem Sierra)."
+msgstr ""
+"Сбой обновления местоположения — только экстренные вызовы (специфично для "
+"модемов Sierra)."
+
+msgid "Memory failure."
+msgstr "Сбой памяти."
+
+msgid "Memory full."
+msgstr "Память заполнена."
+
+msgid "Merge algorithm"
+msgstr "Алгоритм объединения"
+
+msgid "Network not allowed, emergency calls only."
+msgstr "Сеть не разрешена, только экстренные вызовы."
+
+msgid "Network personalization PIN required."
+msgstr "Требуется PIN персонализации сети."
+
+msgid "Network personalization PUK required."
+msgstr "Требуется PUK персонализации сети."
+
+msgid "Network subset personalization PIN required."
+msgstr "Требуется PIN персонализации подсети."
+
+msgid "Network subset personalization PUK required."
+msgstr "Требуется PUK персонализации подсети."
+
+msgid "Network timeout."
+msgstr "Тайм-аут сети."
+
+msgid "Next modem"
+msgstr "Следующий модем"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "No connection to phone."
+msgstr "Нет соединения с телефоном."
+
+msgid "No modems found by ModemManager (mmcli -L)."
+msgstr "ModemManager не нашёл модемов (mmcli -L)."
+
+msgid "No network service."
+msgstr "Сеть недоступна."
+
+msgid "Not found."
+msgstr "Не найдено."
+
+msgid "Operation not allowed."
+msgstr "Операция не разрешена."
+
+msgid "Operation not supported."
+msgstr "Операция не поддерживается."
+
+msgid "Operation temporarily not allowed."
+msgstr "Операция временно не разрешена."
+
+msgid "Operation temporary not allowed."
+msgstr "Операция временно не разрешена."
+
+msgid "PDP authentication failure."
+msgstr "Сбой аутентификации PDP."
+
+msgid "PH-SIM PUK required."
+msgstr "Требуется PUK PH-SIM."
+
+msgid "PH_FSIM PIN required."
+msgstr "Требуется PIN PH-FSIM."
+
+msgid "PH_FSIM PUK required."
+msgstr "Требуется PUK PH-FSIM."
+
+msgid "PH_SIM PIN required."
+msgstr "Требуется PIN PH-SIM."
+
+msgid "PLMN not allowed."
+msgstr "Сеть PLMN не разрешена."
+
+msgid "Phone number to be blurred"
+msgstr "Номер телефона для скрытия"
+
+msgid "Phone/Modem adapter link reserved."
+msgstr "Канал адаптера телефона/модема зарезервирован."
+
+msgid "Phone/Modem failure."
+msgstr "Сбой телефона/модема."
+
+msgid "Phone/Modem is busy."
+msgstr "Телефон/модем занят."
+
+msgid "Please configure SMS reading port first"
+msgstr "Сначала настройте порт чтения SMS"
+
+msgid "Please wait, and retry your selection later (Specific Modem Sierra)."
+msgstr "Подождите и повторите выбор позже (специфично для модемов Sierra)."
+
+msgid ""
+"Please wait.. Process of saving SMS message to a text file is in progress."
+msgstr "Подождите... Идёт сохранение SMS-сообщений в текстовый файл."
+
+msgid "Press [Delete] to delete the content of the message"
+msgstr "Нажмите [Delete], чтобы удалить текст сообщения"
+
+msgid "Press [Delete] to delete the phone number"
+msgstr "Нажмите [Delete], чтобы удалить номер телефона"
+
+msgid "Press [Enter] to send the code, press [Delete] to delete the code"
+msgstr "Нажмите [Enter] для отправки кода, [Delete] — для удаления кода"
+
+msgid "Press [Enter] to send the command, press [Delete] to delete the command"
+msgstr "Нажмите [Enter] для отправки команды, [Delete] — для удаления команды"
+
+msgid "Previous modem"
+msgstr "Предыдущий модем"
+
+msgid "Read and send SMS via ModemManager (mmcli)"
+msgstr "Чтение и отправка SMS через ModemManager (mmcli)"
+
+msgid "Requested service option not subscribed."
+msgstr "Запрошенная услуга не подключена."
+
+msgid "Roaming not allowed in this location area."
+msgstr "Роуминг в этой зоне не разрешён."
+
+msgid "SIM Blocked."
+msgstr "SIM-карта заблокирована."
+
+msgid "SIM PIN required."
+msgstr "Требуется PIN SIM-карты."
+
+msgid "SIM PIN2 required."
+msgstr "Требуется PIN2 SIM-карты."
+
+msgid "SIM PUK required."
+msgstr "Требуется PUK SIM-карты."
+
+msgid "SIM PUK2 required."
+msgstr "Требуется PUK2 SIM-карты."
+
+msgid "SIM busy."
+msgstr "SIM-карта занята."
+
+msgid "SIM failure."
+msgstr "Сбой SIM-карты."
+
+msgid "SIM not inserted."
+msgstr "SIM-карта не вставлена."
+
+msgid "SIM powered down."
+msgstr "SIM-карта отключена."
+
+msgid "SIM wrong."
+msgstr "Неверная SIM-карта."
+
+msgid "SMS forwarding function is not enabled"
+msgstr "Функция пересылки SMS не включена"
+
+msgid "SS not executed."
+msgstr "Услуга SS не выполнена."
+
+msgid "Save as .txt file"
+msgstr "Сохранить как .txt файл"
+
+msgid "Save messages to a text file"
+msgstr "Сохранить сообщения в текстовый файл"
+
+msgid "Save sms to txt file?"
+msgstr "Сохранить SMS в txt-файл?"
+
+msgid "Saving..."
+msgstr "Сохранение..."
+
+msgid "Selection failure – emergency calls only (Specific Modem Sierra)."
+msgstr ""
+"Сбой выбора — только экстренные вызовы (специфично для модемов Sierra)."
+
+msgid "Send USSD via ModemManager (mmcli)"
+msgstr "Отправка USSD через ModemManager (mmcli)"
+
+msgid "Service operation not supported."
+msgstr "Операция услуги не поддерживается."
+
+msgid "Service option temporary out of order."
+msgstr "Услуга временно недоступна."
+
+msgid "Service provider personalization PIN required."
+msgstr "Требуется PIN персонализации оператора."
+
+msgid "Service provider personalization PUK required."
+msgstr "Требуется PUK персонализации оператора."
+
+msgid "Simple (merge without sorting)"
+msgstr "Простой (объединение без сортировки)"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Text string too long."
+msgstr "Слишком длинный текст."
+
+msgid "The last 5 digits of this number will be blurred."
+msgstr "Последние 5 цифр этого номера будут скрыты."
+
+msgid "UCS2"
+msgstr "UCS2"
+
+msgid "Unable to delete files"
+msgstr "Не удалось удалить файлы"
+
+msgid "Unable to load file"
+msgstr "Не удалось загрузить файл"
+
+msgid "Unknown error."
+msgstr "Неизвестная ошибка."
+
+msgid "Unspecified GPRS error."
+msgstr "Неуточнённая ошибка GPRS."
+
+msgid ""
+"Use ModemManager instead of sms_tool to send USSD codes. For modems that are "
+"managed by ModemManager and do not handle +CUSD on the AT port properly "
+"(e.g. Compal RXM-G1 / Tri Cascade VOS_5G). Requires the modemmanager "
+"package. The USSD port setting is not used in this mode."
+msgstr ""
+"Использовать ModemManager вместо sms_tool для отправки USSD-кодов. Для "
+"модемов, которые управляются ModemManager и некорректно обрабатывают +CUSD "
+"на AT-порту (например, Compal RXM-G1 / Tri Cascade VOS_5G). Требуется пакет "
+"modemmanager. Настройка USSD-порта в этом режиме не используется."
+
+msgid "User abort."
+msgstr "Прервано пользователем."
+
+msgid "User interface for sending AT commands using sms-tool."
+msgstr "Интерфейс отправки AT-команд через sms-tool."
+
+msgid "User interface for sending USSD codes using sms-tool."
+msgstr "Интерфейс отправки USSD-кодов через sms-tool."
+
+msgid "User interface for sending messages using sms-tool."
+msgstr "Интерфейс отправки сообщений через sms-tool."
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "mailsend"
+msgstr "mailsend"
+
+msgid "mailsend package"
+msgstr "пакет mailsend"
+
+msgid "USSD templates"
+msgstr "Шаблоны USSD"
+
+msgid "Auto-detect port and interface"
+msgstr "Автоопределение порта и интерфейса"
+
+msgid "Automatically find the modem AT port and its network interface (via ModemManager when available). Turn this off to select them manually below."
+msgstr "Автоматически находить AT-порт модема и его сетевой интерфейс (через ModemManager, если доступен). Выключите, чтобы выбрать их вручную ниже."
+
+msgid "Modem Settings"
+msgstr "Настройки модема"
+
+msgid "Port for modem communication"
+msgstr "Порт связи с модемом"
+
+msgid "Port used to read modem/connection info. <br /> 				<br />Traditional modem: one of the available ttyUSBX ports.<br /> 				<br />HiLink modem: enter the IP address 192.168.X.X under which the modem is available."
+msgstr "Порт для чтения информации о модеме/соединении. <br /> 				<br />Обычный модем: один из доступных портов ttyUSBX.<br /> 				<br />HiLink-модем: введите IP-адрес 192.168.X.X, по которому доступен модем."
+
+msgid "Port for AT / SMS / USSD"
+msgstr "Порт для AT / SMS / USSD"
+
+msgid "AT command port used for SMS, USSD and AT commands. On most modems it is the same as the modem communication port."
+msgstr "AT-порт для SMS, USSD и AT-команд. На большинстве модемов совпадает с портом связи с модемом."
+
+msgid "Russia"
+msgstr "Россия"
+
+msgid "Frequency management"
+msgstr "Управление частотами"
+
+msgid "TTL IPv4 (in / out)"
+msgstr "TTL IPv4 (вход / исход)"
+
+msgid "TTL IPv6 (in / out)"
+msgstr "TTL IPv6 (вход / исход)"
+
+msgid "off"
+msgstr "выкл"
+
+msgid "Apply TTL"
+msgstr "Применить TTL"
+
+msgid "Applying TTL..."
+msgstr "Применение TTL…"
+
+msgid "TTL applied."
+msgstr "TTL применён."
+
+msgid "Failed to apply TTL"
+msgstr "Не удалось применить TTL"
+
+msgid "TTL must be a number between 1 and 255, or empty to disable"
+msgstr "TTL должен быть числом от 1 до 255 либо пустым (отключено)"
+
+msgid "Modem temperature"
+msgstr "Температура модема"
+
+msgid "Advanced (merge with sorting)"
+msgstr "Расширенный (объединение с сортировкой)"
+
+msgid "Please wait, saving the SMS messages to a text file."
+msgstr "Пожалуйста, подождите: сохранение SMS в текстовый файл."
+
+msgid "Saving the SMS messages to a file failed. Please try again."
+msgstr "Не удалось сохранить SMS в файл. Попробуйте ещё раз."
+
+msgid "Notify about new messages"
+msgstr "Уведомлять о новых сообщениях"
+
+msgid "The LED signals a new message. Before enabling this, configure and save the SMS reading port, the inbox check interval and the notification LED."
+msgstr "Светодиод сигнализирует о новом сообщении. Перед включением настройте и сохраните порт чтения SMS, интервал проверки входящих и светодиод уведомлений."
+
+msgid "Please configure the SMS reading port first"
+msgstr "Сначала настройте порт чтения SMS"
+
+msgid "Show the new-message notification icon on the status overview page."
+msgstr "Показывать значок уведомления о новом сообщении на странице обзора состояния."
+
+msgid "Check the inbox every, minutes"
+msgstr "Проверять входящие каждые, минут"
+
+msgid "How often (in minutes) the inbox is checked."
+msgstr "Как часто (в минутах) проверять входящие."
+
+msgid "Enter a number between 5 and 59"
+msgstr "Введите число от 5 до 59"
+
+msgid "Restart the inbox-checking process every"
+msgstr "Перезапускать процесс проверки входящих каждые"
+
+msgid "The process restarts at the chosen interval, which removes any delay in checking the inbox."
+msgstr "Процесс перезапускается через выбранный интервал, что устраняет задержку проверки входящих."
+
+msgid "LED is dedicated only to these notifications"
+msgstr "Светодиод предназначен только для этих уведомлений"
+
+msgid "<abbr title=\"Light Emitting Diode\">LED</abbr> name"
+msgstr "Название <abbr title=\"Light Emitting Diode\">светодиода</abbr>"
+
+msgid "The mailsend package is not installed. Install it first using the Install… button below."
+msgstr "Пакет mailsend не установлен. Сначала установите его кнопкой «Установить…» ниже."
+
+msgid "Pick a predefined e-mail provider or enter the settings manually."
+msgstr "Выберите готового почтового провайдера или введите настройки вручную."
+
+msgid "App password / password for SMTP authentication."
+msgstr "Пароль приложения / пароль для аутентификации SMTP."
+
+msgid "Hostname or IP address of the SMTP server."
+msgstr "Имя хоста или IP-адрес SMTP-сервера."
+
+msgid "Enter a decimal value"
+msgstr "Введите десятичное число"
+
+msgid "Add prefix to the phone number"
+msgstr "Добавлять префикс к номеру телефона"
+
+msgid "Automatically add the prefix to the phone-number field."
+msgstr "Автоматически добавлять префикс в поле номера телефона."
+
+msgid "Send one message to every contact in the contact list."
+msgstr "Отправить одно сообщение всем контактам из списка."
+
+msgid "Message-sending delay"
+msgstr "Задержка отправки сообщений"
+
+msgid "3–59 seconds. Important: messages are sent without delivery verification or confirmation, so there is a risk they are not delivered."
+msgstr "3–59 секунд. Важно: сообщения отправляются без проверки и подтверждения доставки, поэтому есть риск, что они не будут доставлены."
+
+msgid "Enter a number between 3 and 59"
+msgstr "Введите число от 3 до 59"
+
+msgid "Show number and prefix hints"
+msgstr "Показывать подсказки по номеру и префиксу"
+
+msgid "On the Send tab, show a hint about the prefix and the correct phone-number format."
+msgstr "На вкладке отправки показывать подсказку о префиксе и правильном формате номера телефона."
+
+msgid "Edit user contacts"
+msgstr "Редактирование контактов"
+
+msgid "Send the USSD code as plain text"
+msgstr "Отправлять USSD-код открытым текстом"
+
+msgid "Send the USSD code as plain text; the command is not encoded into a PDU."
+msgstr "Отправлять USSD-код открытым текстом; команда не кодируется в PDU."
+
+msgid "Receive the reply without PDU decoding"
+msgstr "Принимать ответ без декодирования PDU"
+
+msgid "Receive and display the reply without decoding it as a PDU."
+msgstr "Принимать и показывать ответ без декодирования его как PDU."
+
+msgid "7-bit"
+msgstr "7-бит"
+
+msgid "Use ModemManager instead of sms_tool to send USSD codes, for modems managed by ModemManager that do not handle +CUSD on the AT port properly (e.g. Compal RXM-G1 / Tri Cascade VOS_5G). Requires the modemmanager package. The USSD port setting is not used in this mode."
+msgstr "Использовать ModemManager вместо sms_tool для отправки USSD-кодов — для модемов под управлением ModemManager, которые некорректно обрабатывают +CUSD на AT-порту (например, Compal RXM-G1 / Tri Cascade VOS_5G). Требуется пакет modemmanager. Настройка порта USSD в этом режиме не используется."
+
+msgid "User AT commands"
+msgstr "Пользовательские AT-команды"
+
+msgid "Receiving settings"
+msgstr "Настройки приёма"
+
+msgid "Sending settings"
+msgstr "Настройки отправки"
+
+msgid "USSD settings"
+msgstr "Настройки USSD"
+
+msgid "AT settings"
+msgstr "Настройки AT"
+
+msgid "This option deletes all SMS messages, including ones not visible on the Inbox tab."
+msgstr "Удаляет все SMS, в том числе не отображаемые на вкладке «Входящие»."
+
+msgid "Select 'No' if the router has a single LED or the LED serves several purposes. This option needs an LED defined in the system to work reliably when the LED is shared."
+msgstr "Выберите «Нет», если у роутера один светодиод или светодиод выполняет несколько задач. Для надёжной работы при совмещённом светодиоде он должен быть определён в системе."
+
+msgid "The phone number should start with the country prefix (for example 48 for Poland, without the '+'). Numbers of 3, 4 or 5 digits are treated as 'short' and must not get a country prefix."
+msgstr "Номер телефона должен начинаться с кода страны (например, 48 для Польши, без «+»). Номера из 3, 4 или 5 цифр считаются «короткими», и код страны к ним добавлять не нужно."
+
+msgid "Each line must use the format 'Contact name;phone number'. The file is saved to <code>/etc/modem/phonebook.user</code>."
+msgstr "Каждая строка должна иметь формат «Имя контакта;номер телефона». Файл сохраняется в <code>/etc/modem/phonebook.user</code>."
+
+msgid "Each line must use the format 'Code description;code'. The file is saved to <code>/etc/modem/ussdcodes/</code>."
+msgstr "Каждая строка должна иметь формат «Описание кода;код». Файл сохраняется в <code>/etc/modem/ussdcodes/</code>."
+
+msgid "Each line must use the format 'AT command description;AT command'. The file is saved to <code>/etc/modem/atcmmds/</code>."
+msgstr "Каждая строка должна иметь формат «Описание AT-команды;AT-команда». Файл сохраняется в <code>/etc/modem/atcmmds/</code>."
+
+msgid "TTL fixing"
+msgstr "Фиксация TTL"
+
+msgid "Hop Limit IPv6 (in / out)"
+msgstr "Hop Limit IPv6 (вход / исход)"
+
+msgid "Inbox"
+msgstr "Входящие СМС"
+
+msgid "Send SMS"
+msgstr "Отправить СМС"

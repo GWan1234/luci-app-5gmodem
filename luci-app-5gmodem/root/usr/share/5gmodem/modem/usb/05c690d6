@@ -1,0 +1,445 @@
+# 05c6:90d6 Compal RXM-G1 on a custom firmware
+# (reports as "Tri Cascade Inc. VOS_5G" to AT+CGMI/CGMM,
+# revision string contains "RXMG1") -> driven through ModemManager
+# (mmcli) + qmicli over QMI instead of raw AT,
+# since AT round-trips here are far slower than asking the already-
+# running ModemManager daemon / qmi-proxy (confirmed on this exact
+# unit: ~25ms per mmcli/qmicli call vs ~100-300ms per AT command)
+
+_IS_COMPAL=0
+_MM_OK=0
+if command -v mmcli >/dev/null 2>&1; then
+	_MM_K=$(mmcli -m any -K 2>/dev/null)
+	case "$_MM_K" in
+		*RXMG1*)
+			_IS_COMPAL=1
+			_MM_OK=1
+			;;
+	esac
+fi
+
+if [ "$_IS_COMPAL" = "1" ]; then
+# ========================================================================
+# Compal RXM-G1 (custom firmware) - driven via mmcli/qmicli, not AT
+# ========================================================================
+
+_QMICLI_OK=0
+command -v qmicli >/dev/null 2>&1 && _QMICLI_OK=1
+
+# --- General modem info, TAC, Cell ID, MCC/MNC - all from one mmcli call ---
+TAC_HEX=$(echo "$_MM_K" | awk -F': *' '/^modem\.location\.3gpp\.tac/{print $2}' | xargs)
+CID_HEX=$(echo "$_MM_K" | awk -F': *' '/^modem\.location\.3gpp\.cid/{print $2}' | xargs)
+if [ -n "$TAC_HEX" ] && [ "x$TAC_HEX" != "x--" ]; then
+	TAC_DEC=$(printf "%d" "0x$TAC_HEX" 2>/dev/null)
+	TAC_HEX=$(echo "$TAC_HEX" | tr 'a-f' 'A-F')
+fi
+if [ -n "$CID_HEX" ] && [ "x$CID_HEX" != "x--" ]; then
+	CID_DEC=$(printf "%d" "0x$CID_HEX" 2>/dev/null)
+	CID_HEX=$(echo "$CID_HEX" | tr 'a-f' 'A-F')
+fi
+
+NR_IMEI=$(echo "$_MM_K" | awk -F': *' '/^modem\.3gpp\.imei/{print $2}' | xargs)
+[ "x$NR_IMEI" = "x--" ] && NR_IMEI=""
+
+MODELREV=$(echo "$_MM_K" | awk -F': *' '/^modem\.generic\.revision/{print $2}' | xargs)
+MODELNAME=$(echo "$_MM_K" | awk -F': *' '/^modem\.generic\.model/{print $2}' | xargs)
+# modem.generic.model reports the generic chipset platform name
+# ("VOS_5G") on this firmware, not the actual modem model - override
+# with the real name, keep the platform name alongside for reference.
+MODEL="Compal RXM-G1 ($MODELNAME)"
+FW="$MODELREV"
+
+# IMSI/ICCID are not exposed over the modem.3gpp.* keys on this MM
+# version - keep using AT for just these two (cheap single commands)
+O=$(sms_tool -d $DEVICE at "AT+CIMI" | xargs)
+NR_C=$(echo "$O" | sed 's/^AT+CIMI //')
+[ -n "$NR_C" ] && NR_IMSI="$NR_C"
+
+O=$(sms_tool -d $DEVICE at "AT+ICCID")
+NR_D=$(echo "$O" | awk -F[:] '/^\+ICCID:/{print $2}' | xargs)
+[ -n "$NR_D" ] && NR_ICCID="$NR_D"
+
+# --- Protocol, from mmcli's own driver report instead of /sys parsing ---
+DRV=$(echo "$_MM_K" | awk -F': *' '/^modem\.generic\.drivers\.value/{print $2}' | xargs | tr '[:upper:]' '[:lower:]')
+case "$DRV" in
+	*qmi_wwan*) PROTO="qmi";;
+	*cdc_mbim*) PROTO="mbim";;
+	*cdc_ether*|*cdc_ncm*) PROTO="ecm";;
+esac
+
+if [ "$REGOK" = "1" ]; then
+
+	if [ "x$MODE_NUM" = "x7" ]; then
+
+		if [ "$_QMICLI_OK" = "1" ]; then
+			# --- Carrier aggregation via QMI (richer than +LCAINFO: also
+			# gives PCI/EARFCN/bandwidth per carrier, and activation state) ---
+			OCA=$(qmicli -d /dev/cdc-wdm0 -p --nas-get-lte-cphy-ca-info 2>/dev/null)
+
+			# more than one cell block present -> CA is at least configured
+			echo "$OCA" | grep -q "^Secondary Cell" && MODE="LTE-A"
+
+			PBLOCK=$(echo "$OCA" | awk '/^Primary Cell Info/{f=1; next} /^Secondary Cell/{f=0} f')
+			T=$(echo "$PBLOCK" | sed -n "s/.*LTE Band: 'eutran-\([0-9]*\)'.*/\1/p")
+			if [ -n "$T" ]; then
+				PBAND=$(band4g "$T")
+				MODE="$MODE $PBAND"
+			fi
+			T=$(echo "$PBLOCK" | sed -n "s/.*RX Channel: '\([0-9]*\)'.*/\1/p")
+			[ -n "$T" ] && EARFCN="$T"
+			T=$(echo "$PBLOCK" | sed -n "s/.*Physical Cell ID: '\([0-9]*\)'.*/\1/p")
+			[ -n "$T" ] && PCI="$T"
+
+			IDX=1
+			for N in 1 2 3 4; do
+				SBLOCK=$(echo "$OCA" | awk -v n="$N" '
+					$0 ~ "^Secondary Cell " n " Info" {f=1; next}
+					/^Secondary Cell|^$/ {f=0}
+					f')
+				[ -z "$SBLOCK" ] && continue
+
+				T=$(echo "$SBLOCK" | sed -n "s/.*LTE Band: 'eutran-\([0-9]*\)'.*/\1/p")
+				if [ -n "$T" ]; then
+					B4=$(band4g "$T")
+					MODE="$MODE / $B4"
+				else
+					B4=""
+				fi
+
+				case $IDX in
+					1) [ -n "$B4" ] && S1BAND="$B4";;
+					2) [ -n "$B4" ] && S2BAND="$B4";;
+					3) [ -n "$B4" ] && S3BAND="$B4";;
+					4) [ -n "$B4" ] && S4BAND="$B4";;
+					*) ;;
+				esac
+				IDX=$((IDX + 1))
+			done
+
+			# --- Signal: RSSI/RSRQ/RSRP/SNR via QMI (PCC) ---
+			OSIG=$(qmicli -d /dev/cdc-wdm0 -p --nas-get-signal-info 2>/dev/null)
+			LTEBLOCK=$(echo "$OSIG" | awk '/^LTE:/{f=1; next} /^5G:|^$/{f=0} f')
+			T=$(echo "$LTEBLOCK" | sed -n "s/.*RSSI: '\(-\?[0-9.]*\).*/\1/p")
+			[ -n "$T" ] && RSSI="$T"
+			T=$(echo "$LTEBLOCK" | sed -n "s/.*RSRQ: '\(-\?[0-9.]*\).*/\1/p")
+			[ -n "$T" ] && RSRQ="$T"
+			T=$(echo "$LTEBLOCK" | sed -n "s/.*RSRP: '\(-\?[0-9.]*\).*/\1/p")
+			[ -n "$T" ] && RSRP="$T"
+			T=$(echo "$LTEBLOCK" | sed -n "s/.*SNR: '\(-\?[0-9.]*\).*/\1/p")
+			[ -n "$T" ] && SINR="$T"
+
+		else
+			# --- qmicli not installed: fall back to AT for CA + signal ---
+			O=$(sms_tool -d $DEVICE at "at+lcainfo")
+
+			CAEN=$(echo "$O" | awk -F: '/CA enable/ {gsub(/[[:space:]\r]/,"",$2); print $2}')
+			[ "x$CAEN" = "x1" ] && MODE="LTE-A"
+
+			PCCLINE=$(echo "$O" | grep -i "^PCC")
+			T=$(echo "$PCCLINE" | sed -n 's/.*Band:\([^ ]*\).*/\1/p')
+			if [ -n "$T" ] && [ "x$T" != "x<NA>" ]; then
+				PBAND=$(band4g "$T")
+				MODE="$MODE $PBAND"
+			fi
+
+			SCCLINES=$(echo "$O" | grep -i "^SCC")
+			IDX=1
+			IFS='
+'
+			for LINE in $SCCLINES; do
+				T=$(echo "$LINE" | sed -n 's/.*Band:\([^ ]*\).*/\1/p')
+				if [ -n "$T" ] && [ "x$T" != "x<NA>" ]; then
+					B4=$(band4g "$T")
+					MODE="$MODE / $B4"
+				else
+					B4=""
+				fi
+				case $IDX in
+					1) [ -n "$B4" ] && S1BAND="$B4";;
+					2) [ -n "$B4" ] && S2BAND="$B4";;
+					3) [ -n "$B4" ] && S3BAND="$B4";;
+					4) [ -n "$B4" ] && S4BAND="$B4";;
+					*) ;;
+				esac
+				IDX=$((IDX + 1))
+			done
+			unset IFS
+
+			OB=$(sms_tool -d $DEVICE at "at+binfo")
+			T=$(echo "$OB" | grep -o "EARFCN [0-9]*" | awk '{print $2}')
+			[ -n "$T" ] && EARFCN="$T"
+			T=$(echo "$OB" | grep -o "physical cell ID [0-9]*" | awk '{print $NF}')
+			[ -n "$T" ] && PCI="$T"
+
+			O2=$(sms_tool -d $DEVICE at "at+cesq")
+			T=$(echo "$O2" | awk -F[,:] '/^\+CESQ/ {print $2}' | xargs)
+			[ -n "$T" ] && [ "x$T" != "x99" ] && RSSI=$((T*2-113))
+			T=$(echo "$O2" | awk -F[,:] '/^\+CESQ/ {print $6}' | xargs)
+			[ -n "$T" ] && [ "x$T" != "x255" ] && RSRP=$((T-141))
+			T=$(echo "$O2" | awk -F[,:] '/^\+CESQ/ {print $7}' | xargs)
+			[ -n "$T" ] && [ "x$T" != "x255" ] && RSRQ=$((T/2-20))
+			T=$(echo "$O2" | awk -F[,:] '/^\+CESQ/ {print $8}' | xargs)
+			[ -n "$T" ] && [ "x$T" != "x255" ] && SINR="$T"
+		fi
+	fi
+
+	# --- 5G NSA / SA (and LTE carrier aggregation) ---
+	# The MODE_NUM=7 block above only covers plain LTE. For 5G the serving
+	# band never got filled and the UI showed just "LTE"/"-".
+	#
+	# The technology label comes from ModemManager's ACTIVE access
+	# technologies (authoritative), not from a single rf-band-info entry
+	# (which lists only the LTE anchor when the NR carrier is momentarily
+	# idle) and not from +COPS AcT (Beeline reports AcT=13 EN-DC even on
+	# pure LTE): lte + 5gnr -> 5G NSA, 5gnr only -> 5G SA, lte only -> LTE
+	# (LTE-A when more than one LTE band is aggregated). This fixes 5G being
+	# shown as "LTE", and forcing 4G correctly falls back to "LTE".
+	if [ "$_QMICLI_OK" = "1" ] && { [ "x$MODE_NUM" = "x13" ] || [ "x$MODE_NUM" = "x11" ]; }; then
+		ATECH=$(echo "$_MM_K" | awk -F': *' '/access-technologies\.value/{print $2}' | xargs)
+		HAS_LTE=0; HAS_NR=0
+		echo " $ATECH " | grep -q " lte "  && HAS_LTE=1
+		echo " $ATECH " | grep -q " 5gnr " && HAS_NR=1
+
+		ORF=$(qmicli -d /dev/cdc-wdm0 -p --nas-get-rf-band-info 2>/dev/null)
+		# all aggregated LTE bands (unique, keep order)
+		LSTR=""
+		for NUM in $(echo "$ORF" | sed -n "s/.*Active Band Class: *'eutran-\([0-9]*\)'.*/\1/p" | awk '!s[$0]++'); do
+			HAS_LTE=1
+			BL=$(band4g "$NUM"); [ -z "$PBAND" ] && PBAND="$BL"
+			LSTR="${LSTR}${LSTR:+ + }${BL}"
+		done
+		# NR bands, when the NR carrier is actually aggregating
+		NSTR=""
+		for NUM in $(echo "$ORF" | sed -n "s/.*Active Band Class: *'ngran-\([0-9]*\)'.*/\1/p" | awk '!n[$0]++'); do
+			HAS_NR=1
+			NSTR="${NSTR}${NSTR:+ + }$(band5g "$NUM")"
+		done
+
+		LTETECH="LTE"
+		[ "$(echo "$LSTR" | grep -o '+' | wc -l)" -gt 0 ] && LTETECH="LTE-A"
+
+		if [ "$HAS_NR" = "1" ] && [ "$HAS_LTE" = "1" ]; then TECH="5G NSA"
+		elif [ "$HAS_NR" = "1" ]; then TECH="5G SA"
+		elif [ "$HAS_LTE" = "1" ]; then TECH="$LTETECH"
+		else TECH=""
+		fi
+
+		BANDSTR="$LSTR"
+		[ -n "$NSTR" ] && BANDSTR="${BANDSTR}${BANDSTR:+ + }${NSTR}"
+		[ -n "$TECH" ] && MODE="$TECH${BANDSTR:+ | $BANDSTR}"
+
+		T=$(echo "$ORF" | sed -n "s/.*Active Channel: *'\([0-9]*\)'.*/\1/p" | head -1)
+		[ -z "$EARFCN" ] && [ -n "$T" ] && EARFCN="$T"
+
+		# Signal (LTE block for NSA anchor; guard so existing values win)
+		if [ -z "$RSRP" ]; then
+			OSIG=$(qmicli -d /dev/cdc-wdm0 -p --nas-get-signal-info 2>/dev/null)
+			LB=$(echo "$OSIG" | awk '/^LTE:/{f=1;next} /^5G:|^$/{f=0} f')
+			T=$(echo "$LB" | sed -n "s/.*RSSI: '\(-\?[0-9.]*\).*/\1/p"); [ -n "$T" ] && RSSI="$T"
+			T=$(echo "$LB" | sed -n "s/.*RSRQ: '\(-\?[0-9.]*\).*/\1/p"); [ -n "$T" ] && RSRQ="$T"
+			T=$(echo "$LB" | sed -n "s/.*RSRP: '\(-\?[0-9.]*\).*/\1/p"); [ -n "$T" ] && RSRP="$T"
+			T=$(echo "$LB" | sed -n "s/.*SNR: '\(-\?[0-9.]*\).*/\1/p"); [ -n "$T" ] && SINR="$T"
+		fi
+	fi
+
+fi
+
+MODE=$(echo $MODE | sed 's,/,+,' | sed 's,LTE B,LTE | B,' | sed 's,LTE-A B,LTE-A | B,')
+
+else
+# ========================================================================
+# Foxconn T99W175 (FW 6.0.0.6) - stock branch, unchanged from upstream
+# ========================================================================
+
+O=$(sms_tool -d $DEVICE at "AT^TEMP?")
+
+T=$(echo "$O" | awk '/^TSENS: / {gsub("C","",$2); print $2}')
+T1=$(echo "$O" | awk '/^PA: / {gsub("C","",$2); print $2}')
+if [ -n "$T" ] && [ -n "$T1" ]; then
+	case "$T1" in
+		''*[!0-9]*'') ;;
+		*) case "$T" in
+			''*[!0-9]*'') ;;
+			*) [ "$T1" -gt "$T" ] && T="$T1" ;;
+		   esac ;;
+	esac
+fi
+
+T1=$(echo "$O" | awk '/^Skin Sensor: / {gsub("C","",$2); print $2}')
+if [ -n "$T" ] && [ -n "$T1" ]; then
+	case "$T1" in
+		''*[!0-9]*'') ;;
+		*) case "$T" in
+			''*[!0-9]*'') ;;
+			*) [ "$T1" -gt "$T" ] && T="$T1" ;;
+		   esac ;;
+	esac
+fi
+[ -n "$T" ] && TEMP="$T &deg;C"
+
+if [ "$REGOK" = "1" ]; then
+
+O=$(sms_tool -d $DEVICE at "at^debug?")
+
+case "$MODE_NUM" in
+	"7")
+		MODE="LTE |"
+		echo "$O" | grep -q "scell:" && MODE="LTE-A |"
+		;;
+	"11")
+		MODE="5G SA |"
+		;;
+	"13")
+		MODE="5G NSA |"
+		;;
+esac
+
+T=$(echo "$O" | awk -F: '/^lte_tac:/ {print $2}' | xargs)
+if [ -n "$T" ]; then
+	TAC_HEX=$(printf "%X" $T)
+	TAC_DEC="$T"
+fi
+
+O1=$(echo "$O" | grep -A 3 pcell)
+T=$(echo "$O1" | awk -F: '/^pcell:/ {print $3}' | cut -f1 -d" ")
+if [ -n "$T" ]; then
+	MODE="$MODE $(band4g $T)"
+	T1=$(echo "$O1" | awk -F: '/^pcell:/ {print $4}' | xargs)
+	PBAND="$(band4g $T) @${T1/MHz/} MHz"
+
+	T=$(echo "$O1" | awk -F: '/pci:/ {print $3}' | xargs)
+	[ -n "$T" ] && PCI=$T
+	T=$(echo "$O1" | awk -F: '/^channel:/ {print $2}' | cut -f1 -d" " | xargs)
+	[ -n "$T" ] && EARFCN=$T
+	T=$(echo "$O1" | awk -F[:,] '/^lte_rsrp:/ {print $2}')
+	[ -n "$T" ] && RSRP="${T/dBm/}"
+	T=$(echo "$O1" | awk -F[:,] '/rsrq:/ {print $4}' | xargs)
+	[ -n "$T" ] && RSRQ="${T/dB/}"
+	T=$(echo "$O1" | awk -F[:,] '/^lte_rssi:/ {print $2}')
+	[ -n "$T" ] && RSSI="${T/dBm/}"
+	T=$(echo "$O1" | awk -F[:,] '/lte_snr:/ {print $4}' | xargs)
+	[ -n "$T" ] && [ "$T" != "NA" ] && SINR="${T/dB/}"
+fi
+
+O1=$(echo "$O" | grep -A 3 scell)
+IDX=0;
+while true; do
+	O2=$(echo "$O1" | head -n4)
+	if [ -z "$O2" ]; then
+		break
+	fi
+	IDX=$((IDX + 1))
+
+	T=$(echo "$O2" | awk -F: '/^scell:/ {print $3}' | cut -f1 -d" ")
+	MODE="$MODE / $(band4g $T)"
+	T1=$(echo "$O2" | awk -F: '/^scell:/ {print $4}' | xargs)
+		if [ -n "$T1" ]; then
+			case $IDX in
+				1) S1BAND="$(band4g $T) @${T1/MHz/} MHz";;
+				2) S2BAND="$(band4g $T) @${T1/MHz/} MHz";;
+				3) S3BAND="$(band4g $T) @${T1/MHz/} MHz";;
+				4) S4BAND="$(band4g $T) @${T1/MHz/} MHz";;
+				*) ;;
+			esac
+		fi
+
+	T=$(echo "$O2" | awk -F: '/pci:/ {print $3}' | xargs)
+		if [ -n "$T" ]; then
+			case $IDX in
+				1) S1PCI="$T";;
+				2) S2PCI="$T";;
+				3) S3PCI="$T";;
+				4) S4PCI="$T";;
+				*) ;;
+			esac
+		fi
+
+	T=$(echo "$O2" | awk -F: '/^channel:/ {print $2}' | cut -f1 -d" " | xargs)
+		if [ -n "$T" ]; then
+			case $IDX in
+				1) S1EARFCN="$T";;
+				2) S2EARFCN="$T";;
+				3) S3EARFCN="$T";;
+				4) S4EARFCN="$T";;
+				*) ;;
+			esac
+		fi
+
+	O1=$(echo "$O1" | sed '1,4d')
+done
+
+T=$(echo "$O" | awk -F: '/^nr_band:/ {print $2}' | xargs)
+if [ -n "$T" ]; then
+	MODE="$MODE / $(band5g ${T/n/})"
+	IDX=$((IDX + 1))
+
+	T1=$(echo "$O" | awk -F: '/^nr_band_width:/ {print $2}' | xargs)
+		if [ -n "$T1" ]; then
+			case $IDX in
+				1) S1BAND="$(band5g ${T/n/}) @${T1/MHz/} MHz";;
+				2) S2BAND="$(band5g ${T/n/}) @${T1/MHz/} MHz";;
+				3) S3BAND="$(band5g ${T/n/}) @${T1/MHz/} MHz";;
+				4) S4BAND="$(band5g ${T/n/}) @${T1/MHz/} MHz";;
+				*) ;;
+			esac
+		fi
+
+	T=$(echo "$O" | awk -F: '/^nr_pci:/ {print $2}' | xargs)
+		if [ -n "$T" ]; then
+			case $IDX in
+				1) S1PCI="$T";;
+				2) S2PCI="$T";;
+				3) S3PCI="$T";;
+				4) S4PCI="$T";;
+				*) ;;
+			esac
+		fi
+	T=$(echo "$O" | awk -F: '/^nr_channel:/ {print $2}' | xargs)
+		if [ -n "$T" ]; then
+			case $IDX in
+				1) S1EARFCN="$T";;
+				2) S2EARFCN="$T";;
+				3) S3EARFCN="$T";;
+				4) S4EARFCN="$T";;
+				*) ;;
+			esac
+		fi
+fi
+
+fi
+
+MODE=$(echo $MODE | sed 's,/,+,'| sed 's,LTE B,LTE | B,')
+
+# Modem
+MODELA=$(sms_tool -d $DEVICE at "AT+CGMM" | tr -s "\n" | xargs)
+MODELB=$(sms_tool -d $DEVICE at "AT+CGMI" | tr -s "\n" | xargs)
+MODELACUT=$(echo $MODELA | sed s/"AT+CGMM "//)
+MODELBCUT=$(echo $MODELB | sed s/"AT+CGMI "//)
+MODEL="$MODELBCUT "$MODELACUT
+
+FWA=$(sms_tool -d $DEVICE at "AT+CGMR" | tr -s "\n" | xargs)
+FW=$(echo $FWA | sed s/"AT+CGMR "//)
+
+O=$(sms_tool -d $DEVICE at "AT+CGSN" | xargs)
+NR_I=$(echo "$O" | sed s/"AT+CGSN "//)
+[ -n "$NR_I" ] && NR_IMEI="$NR_I"
+
+O=$(sms_tool -d $DEVICE at "AT+CIMI" | xargs)
+NR_C=$(echo "$O" | sed s/"AT+CIMI "//)
+[ -n "$NR_C" ] && NR_IMSI="$NR_C"
+
+O=$(sms_tool -d $DEVICE at "AT+ICCID")
+NR_D=$(echo "$O" | awk -F [:] '/^\ICCID:/{print $2}' | xargs)
+[ -n "$NR_D" ] && NR_ICCID="$NR_D"
+
+PV=$(cat /sys/kernel/debug/usb/devices 2>/dev/null)
+PVCUT=$(echo $PV | awk -F 'Vendor=05c6 ProdID=90d5' '{print $2}' | cut -c-1290)
+if echo "$PVCUT" | grep -q "Driver=qmi_wwan"; then
+    PROTO="qmi"
+elif echo "$PVCUT" | grep -q "Driver=cdc_mbim"; then
+    PROTO="mbim"
+elif echo "$PVCUT" | grep -q "Driver=cdc_ether"; then
+    PROTO="ecm"
+fi
+
+fi

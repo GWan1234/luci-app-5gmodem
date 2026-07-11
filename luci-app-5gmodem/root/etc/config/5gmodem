@@ -1,0 +1,10 @@
+
+config 5gmodem
+	option auto_port '1'
+	option device ''
+	option at_port ''
+	option network ''
+	option ttl4in ''
+	option ttl4out ''
+	option ttl6in ''
+	option ttl6out ''
